@@ -26,6 +26,13 @@ server.post('/api/users', (req, res) => {
     }
 })
 
+server.get('/api/users', (req,res) => {
+    dataBase.find()
+        .then(user => res.status(200).json(user))
+        .catch(err => res.status(500).json({ error: "The users information could not be retrieved." }))
+
+})
+
 
 
 
